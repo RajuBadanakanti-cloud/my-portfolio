@@ -1,0 +1,28 @@
+/* Reset browser default spaces */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;   
+
+}
+
+/* Define the keyframes */
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+}
+
+/* Apply the animation to down icon */
+.fade-down {
+  animation: fadeDown 1.6s infinite;
+}
