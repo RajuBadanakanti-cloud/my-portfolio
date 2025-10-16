@@ -29,7 +29,7 @@ const TypingFadeText = ({ text }) => {
 
   return (
     <motion.h1
-      className="text-[30px] md:text-6xl font-roboto font-bold text-slate-900 flex flex-wrap mb-1 md:mb-2"
+      className="text-[30px] md:text-5xl lg:text-6xl font-roboto font-bold text-slate-900 dark:text-slate-100 flex flex-wrap mb-1 md:mb-2"
       variants={container}
       initial="hidden"
       animate="visible"
@@ -50,31 +50,31 @@ const TypingFadeText = ({ text }) => {
 
 
   const Home = () => (
-  <div id="home" className="min-h-screen w-full bg-gradient-to-r from-white to-sky-50 pt-20 pb-10 flex flex-col justify-center items-center">
-    <div className="w-11/12 md:w-4/5 flex flex-col md:flex-row justify-center md:justify-between items-center mt-10 md:mt-20">
+  <div id="home" className="min-h-screen w-full bg-gradient-to-r from-white to-sky-50 dark:from-black dark:to-sky-950  pt-20 pb-10 flex flex-col justify-center items-center">
+    <div className="w-11/12 md:w-4/5 flex flex-col lg:flex-row justify-center lg:justify-between items-center mt-10 lg:mt-20">
     {/* Text intro Section */}
-    <section className="w-full md:w-1/2 flex flex-col justify-center md:justify-start items-center md:items-start mr-0 md:mr-5 order-2 md:order-1">
+    <section className="w-full lg:w-1/2 flex flex-col justify-center md:justify-start items-center md:items-start mr-0 lg:mr-5 order-2 lg:order-1">
     <TypingFadeText text="Creative Developer & Designer"/>
       <motion.p 
         initial={{opacity:0, y:50}}
         animate={{opacity:1, y:0}}
         transition={{duration:1}}
-        className="text-sm/6 md:text-base/8 
-        text-slate-800 mt-4 md:mt-5 tracking-wide"
+        className="text-sm/6 lg:text-base/8 
+        text-slate-800 dark:text-slate-400 mt-4 md:mt-5 tracking-wide"
       >
         I design and build high-performance digital experiences that are responsive, intuitive, and visually striking. 
         Let’s collaborate to bring your vision to life with precision and creativity.
       </motion.p>
-      <div className="w-full flex flex-col md:flex-row md:items-center mt-8 md:mt-10">
+      <div className="w-full flex flex-col md:flex-row md:items-center mt-8 lg:mt-10">
         {/*  Explore Projects navigation >> */}
-            <a className="bg-blue-600 outline-none h-12 w-full md:h-12  md:w-44 text-gray-50 font-medium text-base
-            rounded-md md:rounded-lg mb-4 md:mb-0 md:mr-5 hover:bg-blue-800 duration-200 flex flex-col justify-center items-center" 
+            <a className="bg-blue-600 dark:bg-blue-400 outline-none h-12 w-full md:h-12  md:w-44 text-gray-50 dark:text-gray-950 font-medium text-base shadow-md shadow-black/20 dark:shadow-white/20
+            rounded-md md:rounded-lg mb-4 md:mb-0 md:mr-5 xl:mr-10 hover:bg-blue-800 dark:hover:bg-blue-600 duration-200 flex flex-col justify-center items-center" 
             href="#projects" rel="noopener noreferrer">
             Explore My Projects </a>
      
         {/*  Contacts Button >> */}
-            <a className="bg-transparent text-blue-600 font-medium h-12 w-full md:h-12 md:w-40 outline-none border-2
-            border-blue-600 rounded-lg hover:bg-sky-100 transition-colors duration-200 flex flex-col justify-center items-center"
+            <a className="bg-transparent text-blue-600 dark:text-blue-400 font-medium h-12 w-full md:h-12 md:w-40 outline-none border-2 shadow-md shadow-black/20 dark:shadow-white/20
+            border-blue-600 dark:border-blue-400 rounded-lg hover:bg-sky-100 dark:hover:bg-slate-900  transition-colors duration-200 flex flex-col justify-center items-center"
             href="#contact" rel="noopener noreferrer">
             Contacts Me
             </a>
@@ -82,13 +82,13 @@ const TypingFadeText = ({ text }) => {
       </div>
 
       {/* Navigation Links container */}
-      <div className="w-full flex flex-row justify-start md:items-center ml-1 mt-6 md:mt-5">
+      <div className="w-full flex flex-row justify-start md:items-center ml-1 mt-6">
         {/* GitHub */}
         <a
          href="https://github.com/RajuBadanakanti-cloud"
          target="_blank"
          rel="noopener noreferrer"
-         className="text-xl md:text-2xl text-gray-600 hover:text-blue-800 transition-colors duration-300 mr-8 md:mr-5"
+         className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 hover:text-blue-800 dark:hover:text-blue-400 transition-colors duration-300 mr-8 md:mr-5"
         >
          <FaGithub />
         </a>
@@ -98,7 +98,7 @@ const TypingFadeText = ({ text }) => {
          href="https://www.linkedin.com/in/raju-badanakanti-491705259/"
          target="_blank"
          rel="noopener noreferrer"
-         className="text-xl md:text-2xl text-gray-600 hover:text-blue-800 transition-colors duration-300 mr-8 md:mr-5"
+         className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 hover:text-blue-800 dark:hover:text-blue-400 transition-colors duration-300 mr-8 md:mr-5"
         >
         <FaLinkedin />
         </a>
@@ -109,7 +109,7 @@ const TypingFadeText = ({ text }) => {
          href="mailto:rajubadanakanti7@gmail.com"
          target="_blank"
          rel="noopener noreferrer"
-         className="text-xl md:text-2xl text-gray-600 hover:text-blue-800 transition-colors duration-300 mr-8 md:mr-5"
+         className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 hover:text-blue-800 dark:hover:text-blue-400 transition-colors duration-300 mr-8 md:mr-5"
         >
         < FaEnvelope />
         </a>
@@ -121,7 +121,7 @@ const TypingFadeText = ({ text }) => {
     </section>
 
     {/* Image Profile Section */}
-    <section className="w-1/2 flex flex-col justify-center items-center md:items-end text-center order-1 md:order-2 mb-5 md:mb-0">
+    <section className="w-1/2 flex flex-col justify-center items-center md:items-start lg:items-end text-center order-1 lg:order-2 mb-5 lg:mb-0">
       <div className="bg-slate-200 h-[250px] w-[250px] md:h-[300px] md:w-[300px] border-4 border-slate-900  rounded-full m-2 relative shadow-xl">
         <img src={profileImgURL} alt="profile" className="w-full absolute rounded-full"/>
       </div>
@@ -130,7 +130,7 @@ const TypingFadeText = ({ text }) => {
     </div>
 
     <a href="#contact" rel="noopener noreferror">
-      <ChevronDown className="w-7 h-7 md:w-8 md:h-8 text-gray-600 fade-down mt-16 md:mt-20 bg-gray-100 rounded-full p-1 cursor-pointer" />
+      <ChevronDown className="w-7 h-7 md:w-8 md:h-8 text-gray-600 dark:text-gray-4  00 fade-down mt-16 md:mt-20 bg-gray-100 dark:bg-gray-900  rounded-full p-1 cursor-pointer" />
     </a> 
 
   </div>
