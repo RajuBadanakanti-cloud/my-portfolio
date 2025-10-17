@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react"; // or any arrow icon
 import {FaGithub, FaLinkedin, FaEnvelope} from "react-icons/fa"
 import './index.css'
 
-const profileImgURL = "https://res.cloudinary.com/dnh9hnjbx/image/upload/v1757773090/My%20Personals/4KProfile-3-3_IMG_PhotoGrid_fn4dgc.png"
+const profileImgURL = "https://res.cloudinary.com/dnh9hnjbx/image/upload/v1760687510/My%20Personals/Professional-black-suit-1-1-profile_wfayxz.png"
 
 
 const TypingFadeText = ({ text }) => {
@@ -122,7 +122,7 @@ const TypingFadeText = ({ text }) => {
 
     {/* Image Profile Section */}
     <section className="w-1/2 flex flex-col justify-center items-center md:items-start lg:items-end text-center order-1 lg:order-2 mb-5 lg:mb-0">
-      <div className="bg-slate-200 h-[250px] w-[250px] md:h-[300px] md:w-[300px] border-4 border-slate-900  rounded-full m-2 relative shadow-xl">
+      <div className="bg-slate-200 h-[250px] w-[250px] md:h-[300px] md:w-[300px] xl:h-[350px] xl:w-[350px] border-4 border-slate-900  rounded-full m-2 relative shadow-xl">
         <img src={profileImgURL} alt="profile" className="w-full absolute rounded-full"/>
       </div>
     </section>
