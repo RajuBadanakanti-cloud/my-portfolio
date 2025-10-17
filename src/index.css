@@ -37,3 +37,31 @@
 html {
   overflow-y: scroll;
 }
+
+/* cover image content >>  */
+/* Splash screen wrapper */
+#splash-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a, #1e293b); /* dark slate-blue gradient */
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+/* Responsive image */
+#splash-screen img {
+  width: clamp(120px, 20vw, 260px); /* auto scales with screen size */
+  height: auto;
+  max-width: 80%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.4));
+}
+
+/* Fade out after React loads */
+body.loaded #splash-screen {
+  opacity: 0;
+  visibility: hidden;
+}

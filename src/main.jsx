@@ -8,3 +8,8 @@ createRoot(document.getElementById('root')).render(
     <App />
   </StrictMode>,
 )
+
+/* Cover Image load (smooth loading)  */
+window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+});
