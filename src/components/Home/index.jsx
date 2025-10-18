@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react"; // or any arrow icon
 import {FaGithub, FaLinkedin, FaEnvelope} from "react-icons/fa"
 import './index.css'
 
-const profileImgURL = "https://res.cloudinary.com/dnh9hnjbx/image/upload/v1760687510/My%20Personals/Professional-black-suit-1-1-profile_wfayxz.png"
+const profileImgURL = "/assets/Professional-black-suit-1-1-profile.png"
 
 
 const TypingFadeText = ({ text }) => {

@@ -1,23 +1,92 @@
-import {FaEnvelope,FaMapMarkerAlt, FaPhone} from 'react-icons/fa'
-import {FaLinkedin, FaGithub, FaRegEnvelope, FaPaperPlane, FaSpinner} from 'react-icons/fa'
+import { useState, useRef } from 'react'
 
-import { useState } from 'react'
+import {FaEnvelope,FaMapMarkerAlt, FaPhone} from 'react-icons/fa'
+import {FaLinkedin, FaGithub, FaRegEnvelope, FaPaperPlane} from 'react-icons/fa'
+import {Loader2} from 'lucide-react'
+import emailjs from "emailjs-com"; // emailJs service
+
+
 
 
 const Context = () => {
 const [isLoadigShown, setIsLoadigShown]= useState(false)
  const [isLoading, setLoading] = useState(false)
 
- const handleFormSubmitButton = (event) => {
-    event.preventDefault()
-    setIsLoadigShown(true)
-    setInterval(()=>{
-    setLoading(true)
-    setIsLoadigShown(false)
-    return clearInterval()
-    },2000)
+ const [name, setName] = useState("") // name from recruiters (inputs)
+ const [email, setEmail] = useState("") // email from recruiters
+ const [subject, setSubject] = useState("") // subject from recruiters
+ const [message, setMessage] = useState("") // message from recruiters
+
+ // Name Input
+ const onNameInput = (event) =>{
+    setName(event.target.value)
+ }
+  // Name Input
+ const onEmailInput = (event) =>{
+    setEmail(event.target.value)
+ }
+  // Name Input
+ const onSubjectInput = (event) =>{
+    setSubject(event.target.value)
+ }
+  // Message Input
+ const onMessageInput = (event) =>{
+    setMessage(event.target.value)
  }
 
+
+// FORM DATA HANDLEING >>>
+  // ✅ Create a form reference for EmailJS
+  const form = useRef();
+// Validation
+  const formDataValidation = () => {
+    if (
+      name.trim().length > 2 &&
+      email.trim().length > 2 &&
+      subject.trim().length > 2 &&
+      message.trim().length > 2
+    ) {
+      return true;
+    } else {
+      alert("Enter valid details (at least 3 characters each).");
+      return false;
+    }
+  };
+
+  // ✅ Handle EmailJS Submission
+  const handleFormData = (event) => {
+    event.preventDefault();
+
+    if (formDataValidation()) {
+      setIsLoadigShown(true);
+
+      emailjs
+        .sendForm(
+          "service_6kb6cd5", // your EmailJS service ID
+          "template_n47nhxc", // your EmailJS template ID
+          form.current,
+          "geHZzF0d_wWL9gaPi" // your EmailJS public key
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            alert("✅ Message sent successfully!");
+            setIsLoadigShown(false);
+            setLoading(true); // show thank you message
+            form.current.reset(); // reset form inputs
+          },
+          (error) => {
+            console.error(error.text);
+            alert("❌ Failed to send message. Please try again later.");
+            setIsLoadigShown(false);
+          }
+        );
+    } else {
+      console.log("Invalid form data");
+    }
+  };
+
+ console.log(subject, message)
 // Contact View >>
  const renderContactView = () => (
     <div id="contact" className="w-full min-h-screen bg-white dark:bg-black flex flex-col justify-start items-center text-center pt-20 md:pt-24 pb-20">
@@ -27,7 +96,7 @@ const [isLoadigShown, setIsLoadigShown]= useState(false)
             I’d be grateful for the opportunity to connect and discuss how I may contribute to your team.</p>
  
             <div className='w-full flex flex-col md:flex-row justify-center md:justify-between items-center md:items-start mr-0 md:mr-4 mt-10'>
-            {/* Contact Information */}
+            {/* Contact Information >> */}
             <section  className='w-full md:w-2/5 flex flex-col justify-start items-start mr-0 md:mr-20'>
                 <h1 className="text-gray-900 dark:text-gray-100 text-xl md:text-2xl font-roboto font-bold mb-5">Contact Information</h1>
                 {/* EMAIL */}
@@ -79,25 +148,25 @@ const [isLoadigShown, setIsLoadigShown]= useState(false)
             </section>
             {/* Form Card >>  */}
             <section className='w-full lg:w-4/6 bg-stone-50 dark:bg-slate-950 flex flex-col justify-start items-end rounded-lg shadow-md ml-0 md:ml-3 lg:ml-5 p-3 md:p-5 mt-10 md:mt-0'>
-            <form className='w-full flex flex-col justify-start items-start p-2 lg:p-4' onSubmit={handleFormSubmitButton}>
-
+            <form ref={form} className='w-full flex flex-col justify-start items-start p-2 lg:p-4' onSubmit={handleFormData}>
+                {/* Name & Email inputs container */}
                 <div className='w-full flex flex-col lg:flex-row mb-5'>
                     <section className='w-full flex flex-col justify-start items-start mb-5 lg:mb-0 md:mr-5'>
                     <label htmlFor="name" className='text-gray-900 dark:text-gray-100 text-sm md:text-base font-medium font-roboto mb-1'>Name</label>
-                    <input id="name" type="text" placeholder="Your Name"
+                    <input id="name" type="text" name="from_name" placeholder="Your Name" value={name} onChange={onNameInput}
                      className='p-2 md:p-3 h-[45px] md:h-12 w-full border-2 font-roboto text-gray-900 dark:text-gray-100  bg-white dark:bg-black text-sm md:text-base border-slate-200 dark:border-slate-800 rounded-md  outline-blue-600 dark:outline-blue-400' required/>
                     </section>
 
                     <section className='w-full flex flex-col justify-start items-start'>
                     <label htmlFor='email' className='text-gray-900 dark:text-gray-100 text-sm md:text-base font-medium font-roboto mb-1'>Email</label>
-                    <input id="email" type="email" placeholder="Your Email"
+                    <input id="email" type="email" name="from_email" placeholder="Your Email" value={email} onChange={onEmailInput}
                     className='p-2 md:p-3 h-[45px] md:h-12 w-full border-2  font-roboto text-gray-900 dark:text-gray-100  bg-white dark:bg-black text-sm md:text-base border-slate-200 dark:border-slate-800 rounded-md outline-blue-600 dark:outline-blue-400' required/>
                     </section>
                 </div>
+                {/* Subject  */}
                 <section className='w-full flex flex-col justify-start items-start mb-5'>
                     <label htmlFor="subject" className='text-gray-900 dark:text-gray-100 text-sm md:text-base font-medium font-roboto mb-1'>Subject</label>
-                    <input id="subject" type="text" placeholder="Enter your subject"
- 
+                    <input id="subject" type="text"  name="subject" placeholder="Enter your subject" value={subject} onChange={onSubjectInput}
                     className='p-2 md:p-3 h-[45px] md:h-12 w-full border-2 font-roboto text-gray-900 dark:text-gray-100  bg-white dark:bg-black text-sm md:text-base border-slate-200 dark:border-slate-800 rounded-md outline-blue-600 dark:outline-blue-400' required/>
                 </section>
 
@@ -111,16 +180,17 @@ const [isLoadigShown, setIsLoadigShown]= useState(false)
                     rows="6"
                     className="w-full p-2 md:p-3 border-2 font-roboto text-gray-900 dark:text-gray-100  bg-white dark:bg-black text-sm md:text-base border-slate-200 dark:border-slate-800 rounded-md outline-blue-600 dark:outline-blue-400 resize-none"
                     required
+                    value={message}
+                    onChange={onMessageInput}
                     />
                 </section>
 
-                {/* send Message buttons  */}
+                {/* Submit/Send Message buttons  */}
                 { isLoadigShown ? 
                                 
-                <button type="submit" className='h-[45px] md:h-12 w-full md:w-[160px] bg-blue-600 dark:bg-blue-400 rounded-md text-white dark:text-black font-roboto font-medium
+                <button type="submit" className='h-[45px] md:h-12 w-full md:w-[160px] bg-blue-600 dark:bg-blue-400 rounded-md text-white dark:text-black text-base font-roboto font-medium
                 flex justify-center items-center hover:bg-blue-800 dark:hover:bg-blue-600 transition-colors duration-300 mb-4 md:mb-2'>
-                
-                    <FaSpinner className='text-base font-bold animate-spin mr-2' style={{ animationDuration: "2s" }} /> Sending...</button> :
+                <Loader2 className=' className="h-5 w-5 animate-spin stroke-[3] text-blue-100 drop-shadow-[0_0_6px_#10b981] mr-2' style={{ animationDuration: "2.5s" }} /> Sending...</button> :
 
                 <button type="submit" className='h-[45px] md:h-12 w-full md:w-[160px] bg-blue-600 dark:bg-blue-400 rounded-md text-white dark:text-black font-roboto font-medium
                 flex justify-center items-center hover:bg-blue-800 dark:hover:bg-blue-600 transition-colors duration-300 mb-4 md:mb-2'>
