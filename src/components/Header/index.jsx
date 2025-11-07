@@ -113,13 +113,13 @@ useEffect(() => {
       <section className="w-4/5 flex flex-row justify-between items-center">
         <a className="text-2xl font-montserrat font-bold text-blue-600 dark:text-blue-400 border-none outline-none mr-10"
          href="#home" rel="noopener noreferrer">Portfolio</a>
-
+      {/* Navigation Tabs */}
       <ul className="flex flex-row justify-center items-center">
         {navigationTabList.map(eachTab => {
-        const isActive = activeTab ===  eachTab.tabId ? "text-blue-800 font-bold dark:text-blue-600" : "text-gray-500 dark:text-gray-400 font-normal"
+        const isActive = activeTab ===  eachTab.tabId ? "text-blue-800 font-bold dark:text-blue-600" : "text-gray-500 dark:text-gray-400 font-normal "
          return (
           <li key={eachTab.tabId} className="mr-6">
-            <a href={eachTab.tabLink} onClick={() => setActiveTab(eachTab.tabId)} className={`text-lg font-roboto hover:text-blue-800 dark:hover:text-blue-200 ${isActive}`}>
+            <a href={eachTab.tabLink} onClick={() => setActiveTab(eachTab.tabId)} className={`text-lg font-roboto dark:hover:text-blue-200 ${isActive}`}>
               {eachTab.tabLabel}</a>
           </li>
          )

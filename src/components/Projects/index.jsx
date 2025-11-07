@@ -14,7 +14,7 @@ const TABS = [
     },
     {
         id:3,
-        label:"Frontend UX/UI",
+        label:"Web Design",
 
     },
     {
@@ -26,59 +26,58 @@ const TABS = [
 
 
 const PROJECTSLIST = [
+    {   id:1,
+        category:"Web Development",
+        title:"NXTTreadz eCommerce Clone",
+        description:"NXT Trendz App is a modern, responsive web application showcasing trending content with intuitive design. Users can explore categories, view dynamic listings, and enjoy smooth navigation. Built to offer both style and usability in one seamless experience.",
+        techStack:["HTML", "CSS", "JavaScript", "React", "APIcalls","Authentication", "JWTToken"],
+        gitRepoLink:"https://github.com/RajuBadanakanti-cloud/NXTTrendz-eCommerce-website.git",
+        liveLink:"https://rbcloud-nxttrendz-ecommerce.netlify.app/",
+        coverImgURL:"/assets/NXTTrendz Ecomarce-Cover.png",
+    },
     {
-        id:1,
+        id:2,
         category:"Web Development",
         title:"To-Do App",
         description: "myTodos is a responsive to-do list web app designed to simplify task management. With a clean design, intuitive interface, and smooth interactions, it helps users stay organized and productive, making daily task tracking effortless and efficient.",
         techStack:["HTML", "CSS", "JavaScript", "React", "LocalStorage"],
         gitRepoLink:"https://github.com/RajuBadanakanti-cloud/my-todos-app.git",
         liveLink:"https://rbcloud-mytodos-app.netlify.app/",
-        coverImgURL:"https://images.pexels.com/photos/3680904/pexels-photo-3680904.jpeg",
+        coverImgURL:"/assets/Todo App-Cover.png",
     },
     {
-        id:2,
-        category:"Frontend UX/UI",
+        id:3,
+        category:"Web Development",
         title:"Interactive Quiz",
         description:"Interactive Quiz is a dynamic, engaging web app that lets users test their knowledge across multiple topics. With instant feedback, clean UI, and user-friendly flow, it’s built to make learning fun and interactive—perfect for expanding skills and challenging yourself.",
         techStack:["HTML", "CSS", "JavaScript", "React"],
         gitRepoLink:"https://github.com/RajuBadanakanti-cloud/interactive-quiz.git",
         liveLink:"https://rbcloud-interactive-quiz.netlify.app/",
-        coverImgURL:"https://res.cloudinary.com/dnh9hnjbx/image/upload/v1755676261/todo-bg-image_pseqy9.png",
+        coverImgURL:"/assets/Interactive Quiz-Cover.png",
     },
     {
-        id:3,
+        id:4,
         category:"Web Development",
         title:"Recipe Book",
         description:"RecipeBook is a clean, responsive web app that helps users discover, view, and organize recipes. Featuring intuitive navigation, beautiful layout, and simple interactions, it’s crafted to inspire home cooks and make finding new dishes fast and enjoyable.",
         techStack:["HTML", "CSS", "JavaScript", "React","Context", "LocalStorage"],
         gitRepoLink:"https://github.com/RajuBadanakanti-cloud/recipe-book.git",
         liveLink:"https://rbcloud-recipebook.netlify.app/",
-        coverImgURL:"https://res.cloudinary.com/dnh9hnjbx/image/upload/v1755676261/todo-bg-image_pseqy9.png",
+        coverImgURL:"/assets/Recipe Book-Cover.png",
     },
     {
-        id:4,
-        category:"Frontend UX/UI",
+        id:5,
+        category:"Web Design",
         title:"Personal Portfolio",
         description:"A personal portfolio showcasing my projects, skills, and design philosophy. Clean layout, fast performance, and intuitive navigation combine to highlight my strengths as a developer and designer, offering a polished view of my work and capabilities.",
         techStack:["HTML", "CSS", "JavaScript", "React", "APIcalls", "Node + Nodemail"],
         gitRepoLink:"https://github.com/RajuBadanakanti-cloud/personal-portfolio.git",
         liveLink:"https://rbcloud-portfolio.netlify.app/",
-        coverImgURL:"https://images.pexels.com/photos/3680904/pexels-photo-3680904.jpeg",
-    },
-    {
-        id:5,
-        category:"Web Development",
-        title:"NXTTreadz eCommerce Clone",
-        description:"NXT Trendz App is a modern, responsive web application showcasing trending content with intuitive design. Users can explore categories, view dynamic listings, and enjoy smooth navigation. Built to offer both style and usability in one seamless experience.",
-        techStack:["HTML", "CSS", "JavaScript", "React", "APIcalls","Authentication", "JWTToken"],
-        gitRepoLink:"https://github.com/RajuBadanakanti-cloud/NXTTrendz-eCommerce-website.git",
-        liveLink:"https://rjnxttrendzapp.ccbp.tech/",
-        coverImgURL:"https://images.pexels.com/photos/1420440/pexels-photo-1420440.jpeg",
+        coverImgURL:"/assets/Personal Portfolio-Cover.png",
     },
     {
         id:6,
-        category:"Web Development",
+        category:"Design",
         title:"NXTTreadz eCommerce Clone",
         description:"NXT Trendz App is a modern, responsive web application showcasing trending content with intuitive design. Users can explore categories, view dynamic listings, and enjoy smooth navigation. Built to offer both style and usability in one seamless experience.",
         techStack:["HTML", "CSS", "JavaScript", "React", "APIcalls","Authentication", "JWTToken"],
@@ -102,7 +101,7 @@ const Projects = () => {
         <div id="projects" className="min-h-screen bg-gray-50 dark:bg-gray-950 flex flex-col justify-start items-center text-center pt-20 md:pt-24 pb-20">
             <div className="w-11/12 md:w-4/5 flex flex-col justify-center items-center mt-4 md:mt-10" >
             <h1 className="text-2xl md:text-4xl text-gray-950 dark:text-gray-50 font-poppins font-bold inline-block border-b-4 border-blue-600 pb-1 md:pb-2 mb-10">My Projects</h1>
-            <p className="text-base/7 md:text-lg/8 text-gray-950 dark:text-gray-50">Here it is a showcase of projects that highlight my expertise in web development and UX/UI design,
+            <p className="text-base/7 md:text-lg/8 text-gray-950 dark:text-gray-50">Here it is a showcase of projects that highlight my expertise in web development and web design,
                  blending functionality with user-focused design.</p>
             {/*  Tabs content  */}
             <ul className="w-full flex flex-row justify-center items-center flex-wrap mt-10">
@@ -161,7 +160,7 @@ const Projects = () => {
                     {/* Tech Stock */}
                     <div className="flex flex-row justify-start items-center flex-wrap p-3 cursor-pointer">
                     {eachPro.techStack.map(skill => (
-                        <p key={skill} className="bg-slate-100 dark:bg-slate-900 text-gray-800 dark:text-gray-200 text-xs md:text-sm rounded-lg font-roboto px-2 mr-2 mb-4 cursor-text" onClick={(e) => e.stopPropagation()}>{skill}</p>
+                        <p key={skill} className="bg-slate-100 dark:bg-slate-900 text-gray-800 dark:text-gray-200 text-xs md:text-sm rounded-md font-roboto px-2 py-[2px] mr-[10px] mb-4 cursor-text" onClick={(e) => e.stopPropagation()}>{skill}</p>
                     ))}
                     </div>
                          
