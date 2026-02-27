@@ -1,25 +1,27 @@
 import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+
 
 const navigationTabList = [{
   tabId:1,
   tabLabel:"Home",
-  tabLink:"#home"
+  tabLink:"/#home"
 },
 {
   tabId:2,
   tabLabel:"About",
-  tabLink:"#about"
+  tabLink:"/#about"
 },
 {
   tabId:3,
   tabLabel:"Projects",
-  tabLink:"#projects"
+  tabLink:"/#projects"
 },
 {
   tabId:4,
   tabLabel:"Contact",
-  tabLink:"#contact"
+  tabLink:"/#contact"
 },
 ]
 
@@ -29,6 +31,7 @@ const Header = () => {
 const [activeTab , setActiveTab] = useState(navigationTabList[0].tabId)
 
 const [scrolled, setScrolled] = useState(false); // scrolling tuggele
+const [isInCertificationPage, setIsInCertificationPage] = useState(false); // certification page tuggele
 
 
 useEffect(() => {
@@ -39,7 +42,7 @@ useEffect(() => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const activeSection = navigationTabList.find(
-            (tab) => tab.tabLink === `#${entry.target.id}`
+            (tab) => tab.tabLink.endsWith(`#${entry.target.id}`)
           );
           if (activeSection) {
             setActiveTab(activeSection.tabId);
@@ -104,7 +107,13 @@ useEffect(() => {
     }
   };
 
-
+// active tab removes when I'm stay at certifications page
+const location = useLocation();
+useEffect(() => {
+  if (location.pathname !== "/") {
+    setActiveTab(null); // remove active highlight
+  }
+}, [location.pathname]);
     return (
     <div  className={`h-20 w-full fixed top-0 left-0 z-50 transition-all duration-300 flex flex-col justify-center items-center
        ${
@@ -112,19 +121,28 @@ useEffect(() => {
       }`}>
       <section className="w-4/5 flex flex-row justify-between items-center">
         <a className="text-2xl font-montserrat font-bold text-blue-600 dark:text-blue-400 border-none outline-none mr-10"
-         href="#home" rel="noopener noreferrer">Portfolio</a>
+         href="/#home" rel="noopener noreferrer">Portfolio</a>
       {/* Navigation Tabs */}
       <ul className="flex flex-row justify-center items-center">
         {navigationTabList.map(eachTab => {
         const isActive = activeTab ===  eachTab.tabId ? "text-blue-800 font-bold dark:text-blue-600" : "text-gray-500 dark:text-gray-400 font-normal "
          return (
           <li key={eachTab.tabId} className="mr-6">
-            <a href={eachTab.tabLink} onClick={() => setActiveTab(eachTab.tabId)} className={`text-lg font-roboto dark:hover:text-blue-200 ${isActive}`}>
+            <a href={eachTab.tabLink} onClick={() => {
+              setActiveTab(eachTab.tabId)
+              setIsInCertificationPage(false)
+              }
+            } className={`text-lg font-roboto dark:hover:text-blue-200 ${isActive}`}>
               {eachTab.tabLabel}</a>
           </li>
          )
 })}
       </ul>
+    {/* Certification Link */}
+      <Link to="/certifications"  rel="noopener noreferrer" className="text-lg font-roboto mr-10">
+        <button type="button" onClick={() => setIsInCertificationPage(true)} 
+        className={`${isInCertificationPage ? "bg-blue-500 text-white px-2 py-1 hover:text-gray-50" : "bg-transparent border-none outline-none hover:text-blue-600"}  text-gray-500 dark:text-gray-50 dark:hover:text-gray-200 rounded-md`}>Certifications</button>
+      </Link>
     
     <button className=" dark:bg-slate-800 bg-slate-100 text-gray-800 dark:text-slate-200 p-2 rounded-full hover:bg-slate-300 dark:hover:bg-slate-700" onClick={toggleTheme}>
       {darkMode? <Sun className="w-4 h-4 md:w-5 md:h-5"/>:<Moon className="w-4 h-4 md:w-5 md:h-5"/>} 

@@ -11,13 +11,13 @@ import {FaGlobe ,FaPencilRuler, FaPalette} from 'react-icons/fa'
       id:"1",
       skillType:"Backend",
       skillsIcon:<FaServer className='mr-2 mt-[2px] text-blue-600 dark:text-blue-400'/>,
-      skills:["NodeJs", "ExpressJs", "Python", "MongoDb", "SQLite"]
+      skills:["NodeJs", "ExpressJs", "MongoDb", "SQLite",  "Python (Fundamentals)",]
     },
     {
       id:"2",
       skillType:"Design",
       skillsIcon:<FaPenNib className='mr-2 mt-[2px] text-blue-600 dark:text-blue-400'/>,
-      skills:["Canva", "Figma"]
+      skills:["Canva",]
     }
   ]
 
@@ -44,17 +44,19 @@ import {FaGlobe ,FaPencilRuler, FaPalette} from 'react-icons/fa'
 
 const About = () => {
 
-
 return (
 <div id="about" className="min-h-screen bg-gray-50 dark:bg-gray-950 flex flex-col justify-start items-center pt-20 md:pt-24 pb-5">
   <h1 className="text-2xl md:text-4xl text-gray-950 dark:text-gray-50 font-poppins font-bold inline-block border-b-4 border-blue-600 pb-1 md:pb-2">About Me</h1>
   <div className="w-11/12 md:w-4/5 flex flex-col justify-center items-center mt-6 md:mt-10">
   {/* intro section */}
-  <section className='w-full md:w-[90%] min-h-20 bg-white dark:bg-black rounded-lg text-center shadow-sm p-5 mb-10'>
-    <p className='text-base/7 md:text-lg/8 text-gray-950 dark:text-gray-50'>I am a passionate Web Developer and Designer with proven experience in building responsive, user-friendly, 
-      and performance-driven websites. My expertise lies in developing modern web applications that combine aesthetic design with robust functionality. 
-      With a strong foundation in the MERN stack and a sharp eye for design, I focus on creating digital solutions that are fast, 
-      accessible, and impactful — delivering exceptional user experiences that meet both business goals and user needs.</p>
+  <section className='w-full  min-h-20 bg-white dark:bg-black rounded-lg text-center shadow-sm p-5 mb-10'>
+    <p className='text-base/7 md:text-lg/8 text-gray-950 dark:text-gray-50'>
+        I am a Full-Stack MERN Developer with practical experience in developing modern web applications using React, Node.js, Express, and MongoDB. 
+        My expertise includes authentication systems, CRUD operations, REST API development, state management, responsive UI design, and cloud deployment.
+
+        I focus on building scalable backend systems and intuitive frontend interfaces that ensure performance, accessibility, and maintainability.
+        My goal is to craft efficient digital solutions that deliver both technical excellence and exceptional user experience.
+  </p>
   </section>
 
     {/* Skills and service container */}
@@ -116,11 +118,16 @@ return (
       <div className='bg-blue-600 dark:bg-blue-400 h-3 w-3 md:h-4 md:w-4 top-0 left-0 rounded-full absolute -ml-[7px] md:-ml-2'></div>
       <section className='ml-5 md:ml-10 -mt-1'>
         <h1 className='text-gray-900 dark:text-gray-100 font-roboto font-bold text-[16px] md:text-xl'>NXTWave CCBP4.O (Full-Stack development)</h1>
-        <p className='text-blue-600 dark:text-blue-400 font-roboto mt-1 text-[12px] md:text-base'>Nov 2022 - Jan 2025</p>
+        <p className='text-blue-600 dark:text-blue-400 font-roboto mt-1 text-[12px] md:text-base'>Nov 2022 - March 2025</p>
         <p className='text-gray-800 dark:text-gray-300 text-sm/6 md:text-base font-roboto mt-3 tracking-wide'>
-          Enrolled in NxtWave CCBP 4.O to build software skills. Though COVID and financial issues caused a gap,
-          I resumed learning, completed certifications, gained hands-experience in full-stack development, and 
-          improved both technical and communication skills through projects and training.
+              I enrolled in the NxtWave CCBP 4.0 program in November 2022 to strengthen my software development skills.
+              Although the COVID period and financial constraints temporarily affected my learning pace, I remained committed to continuous self-improvement.
+              <br/> 
+              From 2022 to March 2025, I consistently focused on building practical full-stack development skills, completing certifications, and developing real-world projects using the MERN stack. 
+              During this period, I strengthened my understanding of frontend development, backend architecture, REST APIs, authentication systems, and database management.
+              <br/> 
+              Alongside technical growth, I actively worked on improving my communication and problem-solving abilities to prepare myself for professional opportunities.
+              My journey reflects resilience, consistency, and a strong commitment to becoming a skilled full-stack developer.
         </p>
       </section>
     </div>

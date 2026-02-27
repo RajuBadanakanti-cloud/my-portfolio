@@ -8,8 +8,6 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        montserrat: ['Montserrat', 'sans-serif'],
-        roboto: ['Roboto', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
         openSans: ['Open Sans', 'sans-serif'],
       },

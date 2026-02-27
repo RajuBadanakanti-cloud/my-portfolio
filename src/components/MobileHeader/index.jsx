@@ -1,27 +1,28 @@
 import { useEffect, useState } from "react";
 import { Sun, Moon, X, Menu } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
 
 const navigationTabList = [{
   tabId:1,
   tabLabel:"Home",
-  tabLink:"#home"
+  tabLink:"/#home"
 },
 {
   tabId:2,
   tabLabel:"About",
-  tabLink:"#about"
+  tabLink:"/#about"
 },
 {
   tabId:3,
   tabLabel:"Projects",
-  tabLink:"#projects"
+  tabLink:"/#projects"
 },
 {
   tabId:4,
   tabLabel:"Contact",
-  tabLink:"#contact"
+  tabLink:"/#contact"
 },
 ]
 
@@ -31,7 +32,7 @@ const MobileHeader = () => {
 
 const [scrolled, setScrolled] = useState(false) // scrolling tuggele
   const [isShown , setIsShown] = useState(false) // Mobile Navbar View >>>>>
-
+const [isInCertificationPage, setIsInCertificationPage] = useState(false); // certification page tuggele
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,7 +89,7 @@ const toggleTheme = () =>{
         <section className="w-11/12 flex flex-row justify-between items-center">
 
         <a className="text-lg font-montserrat font-bold text-blue-600 dark:text-blue-400  border-none outline-none mr-10"
-         href="#home" rel="noopener noreferrer">Portfolio</a>
+         href="/#home" rel="noopener noreferrer">Portfolio</a>
         <div className="flex flex-row justify-center items-center">
         {/* Theme mode content */}
           <button className=" dark:bg-slate-800 bg-slate-100  text-slate-900 dark:text-slate-100 p-2 mr-5 rounded-full hover:bg-slate-300 dark:hover:bg-slate-700" onClick={toggleTheme}>
@@ -105,10 +106,11 @@ const toggleTheme = () =>{
         </div>
          </section>
         
-        </div>
-        {/* Menu bar open and navigation content  */}
+    </div>
+
+      {/* Menu bar open and navigation content  */}
         {isShown &&
-         <div className="min-h-[200px] w-full bg-stone-50 dark:bg-slate-950 top-16 fixed z-50 shadow-md overflow-hidden transition-all duration-300 rounded-b-md">
+         <div className="min-h-[200px] w-full bg-stone-50 dark:bg-slate-950  dark:shadow-md dark:shadow-slate-800 top-16 fixed z-50 shadow-md overflow-hidden transition-all duration-300 rounded-b-md">
           <ul className="w-5/6 flex flex-col justify-start items-center p-5">
           {navigationTabList.map(each => (
             <li key={each.tabId} className="w-5/6 mb-5">
@@ -116,7 +118,16 @@ const toggleTheme = () =>{
             </li>
           ))}
 
+
+
+    {/*   Certifications page link   */}
+      <Link to="/certifications"  rel="noopener noreferrer" className="w-5/6 text-lg font-roboto text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
+        <button type="button" onClick={() => {setIsInCertificationPage(true); setIsShown(false)}} 
+        className={`${isInCertificationPage ? "bg-blue-500 text-white px-2 py-1 hover:bg-blue-400" : "bg-transparent border-none outline-none hover:text-blue-500"} font-semibold text-sm tracking-wider text-gray-800 dark:text-gray-200 rounded-md`}>Certifications</button>
+      </Link>
           </ul>
+      
+
           </div>}
         </>
     )

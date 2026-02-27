@@ -6,9 +6,7 @@ import {Loader2} from 'lucide-react'
 import emailjs from "emailjs-com"; // emailJs service
 
 
-
-
-const Context = () => {
+const Contact = () => {
 const [isLoadigShown, setIsLoadigShown]= useState(false)
  const [isLoading, setLoading] = useState(false)
 
@@ -129,26 +127,27 @@ const [isLoadigShown, setIsLoadigShown]= useState(false)
                 <div className='flex flex-row justify-start items-start'>
                 {/* Mail >> */}
                     <a href="mailto:rajubadanakanti7@gmail.com" target="_blank" rel="noopener noreferrer"
-                    className='bg-slate-200 dark:bg-slate-800 p-2 md:p-3 rounded-full mr-5 md:mr-4 hover:bg-blue-800 dark:hover:bg-blue-600 hover:text-gray-100 
+                    className='bg-slate-200 dark:bg-slate-800 p-2 md:p-3 rounded-full mr-5 md:mr-4 hover:bg-blue-700 dark:hover:bg-blue-600 hover:text-gray-100 
                     transition-colors duration-300 cursor-pointer'>
                         <FaRegEnvelope className='text-base text-gray-900 dark:text-gray-100 md:text-xl'/></a>
 
                 {/* Git Hub >> */}
                     <a href="https://github.com/RajuBadanakanti-cloud" target="_blank" rel="noopener noreferrer"
-                    className='bg-slate-200 dark:bg-slate-700 p-2 md:p-3 rounded-full mr-5 md:mr-4 hover:bg-blue-800 dark:hover:bg-blue-600 hover:text-black 
+                    className='bg-slate-200 dark:bg-slate-700 p-2 md:p-3 rounded-full mr-5 md:mr-4 hover:bg-blue-700 dark:hover:bg-blue-600 hover:text-black 
                     transition-colors duration-300 cursor-pointer'>
                         <FaGithub className='text-base md:text-xl'/></a>
                 {/* Linkedin >>  */}
                     <a href="https://www.linkedin.com/in/raju-badanakanti-491705259/" target="_blank" rel="noopener noreferrer" 
-                    className='bg-slate-200 dark:bg-slate-800 p-2 md:p-3  rounded-full mr-5 md:mr-4 hover:bg-blue-800 dark:hover:bg-blue-600 hover:text-gray-100
+                    className='bg-slate-200 dark:bg-slate-800 p-2 md:p-3  rounded-full mr-5 md:mr-4 hover:bg-blue-700 dark:hover:bg-blue-600 hover:text-gray-100
                     transition-colors duration-300 cursor-pointer' >
                         <FaLinkedin className='text-base text-gray-900 dark:text-gray-100 md:text-xl'/></a>
-                </div>
+              </div>
+      
 
             </section>
             {/* Form Card >>  */}
-            <section className='w-full lg:w-4/6 bg-stone-50 dark:bg-slate-950 flex flex-col justify-start items-end rounded-lg shadow-md ml-0 md:ml-3 lg:ml-5 p-3 md:p-5 mt-10 md:mt-0'>
-            <form ref={form} className='w-full flex flex-col justify-start items-start p-2 lg:p-4' onSubmit={handleFormData}>
+            <section className='w-full lg:w-4/6 bg-stone-50 dark:bg-slate-900 flex flex-col justify-start items-end rounded-lg shadow-md ml-0 md:ml-3 lg:ml-5 p-3 md:p-5 mt-10 md:mt-0'>
+            <form id="contact-form" ref={form} className='w-full flex flex-col justify-start items-start p-2 lg:p-4' onSubmit={handleFormData}>
                 {/* Name & Email inputs container */}
                 <div className='w-full flex flex-col lg:flex-row mb-5'>
                     <section className='w-full flex flex-col justify-start items-start mb-5 lg:mb-0 md:mr-5'>
@@ -219,4 +218,4 @@ return (
 )
 }
 
-export default Context
+export default Contact

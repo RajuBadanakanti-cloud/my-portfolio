@@ -1,4 +1,5 @@
-import {FaRegEnvelope,FaGithub,FaLinkedin } from 'react-icons/fa'
+import {Link} from 'react-router-dom'
+import {FaRegEnvelope,FaGithub,FaLinkedin,} from 'react-icons/fa'
 
 const Footer = () => (
         <div className="min-h-[300px] w-full bg-gray-900 dark:bg-gray-950 flex flex-col justify-start items-center text-center pt-10 pb-5 md:pb-10">
@@ -7,7 +8,7 @@ const Footer = () => (
             <section className="w-full lg:w-1/2 flex flex-col justify-start items-start md:flex-wrap lg:flex-nowrap mb-8 lg:mb-0 md:mr-10">
                 <h1 className="text-gray-50 font-roboto font-bold text-xl mb-3">Portfolio</h1>
                 <p className="text-gray-400 font-roboto text-left text-sm md:text-base">This portfolio reflects my professional work, expertise, and commitment to excellence.</p>
-                <p className="text-gray-400 font-roboto text-left text-sm md:text-base mt-3">© 2025 Raju Badanakanti Portfolio,<br/> All rights reserved.</p>
+                <p className="text-gray-400 font-roboto text-left text-sm md:text-base mt-3">© 2026 Raju Badanakanti Portfolio,<br/> All rights reserved.</p>
             </section>
 
             {/* Quick Links  */}
@@ -17,6 +18,9 @@ const Footer = () => (
                 <a href="#about" rel="noopener norelerror" className="text-gray-400 text-left  font-roboto text-sm md:text-base hover:text-blue-500 mb-3 md:mb-2">About</a>
                 <a href="#projects" rel="noopener norelerror" className="text-gray-400 text-left font-roboto text-sm md:text-base hover:text-blue-500 mb-3 md:mb-2">Projects</a>
                 <a href="#contact" rel="noopener norelerror" className="text-gray-400 text-left font-roboto text-sm md:text-base hover:text-blue-500 mb-3 md:mb-2">Contact</a>
+                <Link to="/certifications">
+                <a  className="text-gray-400 text-left font-roboto text-sm md:text-base hover:text-blue-500 mb-3 md:mb-2">Certifications</a>
+                </Link>
             </section>
 
             {/* Let's Connect  */}
@@ -39,6 +43,7 @@ const Footer = () => (
                     className='bg-gray-800 p-3 rounded-full mr-5 text-gray-400 hover:bg-blue-800 dark:hover:bg-blue-400 hover:text-gray-100 
                     transition-colors duration-300 cursor-pointer' >
                         <FaLinkedin className='text-base md:text-lg'/></a>
+   
                 </div>
 
                 <p className="text-gray-400 text-left font-roboto mb-2">Email:

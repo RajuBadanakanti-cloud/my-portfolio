@@ -62,8 +62,8 @@ const TypingFadeText = ({ text }) => {
         className="text-sm/6 lg:text-base/8 
         text-slate-800 dark:text-slate-400 mt-4 md:mt-5 tracking-wide"
       >
-        I design and build high-performance digital experiences that are responsive, intuitive, and visually striking. 
-        Let’s collaborate to bring your vision to life with precision and creativity.
+      I design and build scalable, high-performance web applications that are responsive, intuitive, and visually refined. 
+      From frontend interfaces to backend systems, I craft complete digital solutions that deliver real impact.
       </motion.p>
       <div className="w-full flex flex-col md:flex-row md:items-center mt-8 lg:mt-10">
         {/*  Explore Projects navigation >> */}
@@ -83,6 +83,17 @@ const TypingFadeText = ({ text }) => {
 
       {/* Navigation Links container */}
       <div className="w-full flex flex-row justify-start md:items-center ml-1 mt-6">
+        {/* EMail */}
+        <a
+         href="mailto:rajubadanakanti7@gmail.com"
+         target="_blank"
+         rel="noopener noreferrer"
+         className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 hover:text-blue-800 dark:hover:text-blue-400 transition-colors duration-300 mr-8 md:mr-5"
+        >
+        < FaEnvelope />
+        </a>
+
+
         {/* GitHub */}
         <a
          href="https://github.com/RajuBadanakanti-cloud"
@@ -104,15 +115,8 @@ const TypingFadeText = ({ text }) => {
         </a>
 
 
-        {/* EMail */}
-        <a
-         href="mailto:rajubadanakanti7@gmail.com"
-         target="_blank"
-         rel="noopener noreferrer"
-         className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 hover:text-blue-800 dark:hover:text-blue-400 transition-colors duration-300 mr-8 md:mr-5"
-        >
-        < FaEnvelope />
-        </a>
+
+
 
       </div>
 
