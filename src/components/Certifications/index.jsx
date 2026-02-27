@@ -99,8 +99,20 @@ const Certifications = () => {
   return (
     <div  className="min-h-screen bg-gray-50 dark:bg-gray-950 flex flex-col justify-start items-center pt-20 md:pt-24 pb-5">
    <h1 className="text-2xl md:text-4xl text-gray-950 dark:text-gray-50 font-poppins font-bold inline-block border-b-4 border-blue-600 pb-1 md:pb-2">Certifications</h1>
+
+
     {/* Content section */}
     <div className="w-11/12 md:w-4/5 flex flex-col justify-center items-center mt-6 md:mt-10">
+        {/* certifaction-intro  */}
+
+    <section className='w-full  min-h-20 bg-white dark:bg-black rounded-lg text-center shadow-sm p-5 mb-12'>
+    <p className='text-base/7 md:text-lg/8 text-gray-950 dark:text-gray-50'>
+      This section highlights the certifications I have earned as part of my continuous learning journey in full-stack web development. 
+      Each certification represents my commitment to strengthening technical expertise, mastering modern technologies, 
+      and applying practical skills through structured training and hands-on projects.
+    </p>
+  </section>
+  {/*  certifications cards container */}
       <ul className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {CERTIFICATIONS_DATA.map((eachItem, index) => (
           <li key={eachItem.id} 
