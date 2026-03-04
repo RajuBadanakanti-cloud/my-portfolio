@@ -19,7 +19,7 @@ const Footer = () => (
                 <a href="#projects" rel="noopener norelerror" className="text-gray-400 text-left font-roboto text-sm md:text-base hover:text-blue-500 mb-3 md:mb-2">Projects</a>
                 <a href="#contact" rel="noopener norelerror" className="text-gray-400 text-left font-roboto text-sm md:text-base hover:text-blue-500 mb-3 md:mb-2">Contact</a>
                 <Link to="/certifications">
-                <a  className="text-gray-400 text-left font-roboto text-sm md:text-base hover:text-blue-500 mb-3 md:mb-2">Certifications</a>
+                <p  className="text-gray-400 text-left font-roboto text-sm md:text-base hover:text-blue-500 mb-3 md:mb-2">Certifications</p>
                 </Link>
             </section>
 

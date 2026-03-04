@@ -116,8 +116,6 @@ const TypingFadeText = ({ text }) => {
 
 
 
-
-
       </div>
 
 
@@ -125,9 +123,9 @@ const TypingFadeText = ({ text }) => {
     </section>
 
     {/* Image Profile Section */}
-    <section className="w-1/2 flex flex-col justify-center items-center md:items-start lg:items-end text-center order-1 lg:order-2 mb-5 lg:mb-0">
-      <div className="bg-slate-200 h-[250px] w-[250px] md:h-[300px] md:w-[300px] xl:h-[350px] xl:w-[350px] border-4 border-slate-900  rounded-full m-2 relative shadow-xl">
-        <img src={profileImgURL} alt="profile" className="w-full absolute rounded-full"/>
+    <section className="w-1/2 flex flex-col justify-center items-center md:items-start lg:items-end text-center order-1 lg:order-2 mb-5 lg:mb-0 ">
+      <div className="bg-slate-200 h-[250px] w-[250px] md:h-[300px] md:w-[300px] xl:h-[350px] xl:w-[350px] border-4 border-slate-900  rounded-full m-2 relative shadow-xl transform transition-transform duration-300 hover:scale-105">
+        <img src={profileImgURL} alt="profile" className="w-full absolute rounded-full "/>
       </div>
     </section>
 

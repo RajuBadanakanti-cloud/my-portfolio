@@ -35,6 +35,16 @@ const PROJECTSLIST = [
         liveLink:"https://rbcloud-nxttrendz-ecommerce.netlify.app/",
         coverImgURL:"/assets/NXTTrendz Ecomarce-Cover.png",
     },
+        {
+         id:uuidv4(),
+        category:"Web Design",
+        title:"Personal Portfolio",
+        description:"A personal portfolio showcasing my projects, skills, and design philosophy. Clean layout, fast performance, and intuitive navigation combine to highlight my strengths as a developer and designer, offering a polished view of my work and capabilities.",
+        techStack:["HTML", "CSS", "JavaScript", "React", "APIcalls", "Node with Nodemail (by Ai asistance)"],
+        gitRepoLink:"https://github.com/RajuBadanakanti-cloud/personal-portfolio.git",
+        liveLink:"https://rb-portfolio-ccbp.netlify.app",
+        coverImgURL:"/assets/Personal Portfolio-Cover.png",
+    },
     {
         id:uuidv4(),
         category:"Frontend Development",
@@ -65,16 +75,7 @@ const PROJECTSLIST = [
         liveLink:"https://rbcloud-recipebook.netlify.app/",
         coverImgURL:"/assets/Recipe Book-Cover.png",
     },
-    {
-         id:uuidv4(),
-        category:"Web Design",
-        title:"Personal Portfolio",
-        description:"A personal portfolio showcasing my projects, skills, and design philosophy. Clean layout, fast performance, and intuitive navigation combine to highlight my strengths as a developer and designer, offering a polished view of my work and capabilities.",
-        techStack:["HTML", "CSS", "JavaScript", "React", "APIcalls", "Node with Nodemail (by Ai asistance)"],
-        gitRepoLink:"https://github.com/RajuBadanakanti-cloud/personal-portfolio.git",
-        liveLink:"https://rb-portfolio-ccbp.netlify.app",
-        coverImgURL:"/assets/Personal Portfolio-Cover.png",
-    },
+
     {
          id:uuidv4(),
         category:"Design",
