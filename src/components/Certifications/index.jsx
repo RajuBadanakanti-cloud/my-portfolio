@@ -127,7 +127,7 @@ const Certifications = () => {
            
             
             <section className="h-100 w-120 bg-white dark:bg-black shadow-sm rounded-lg p-3 mb-2">
-            <img src={eachItem.certificateURL} alt={`${eachItem.course} Certificate`} className="w-fit rounded-lg shadow-md overflow-hidden" />
+            <img src={eachItem.certificateURL} loading="lazy" alt={`${eachItem.course} Certificate`} className="w-fit rounded-lg shadow-md overflow-hidden" />
             </section>
 
             <h1 className="text-gray-900 dark:text-gray-100 font-roboto font-bold text-xl">{eachItem.course}</h1>
