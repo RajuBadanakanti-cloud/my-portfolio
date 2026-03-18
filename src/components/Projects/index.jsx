@@ -71,7 +71,7 @@ const Projects = () => {
                     onClick={() => window.open(eachPro.liveLink)}>
                     {/* Img - text - container */}
                     <div className="relative w-full flex flex-col justify-start items-center overflow-hidden">
-                    <img src={eachPro.coverImgURL} className="w-full h-48 md:h-52 object-cover bg-cover scall-100 group-hover:scale-105 overflow-hidden transition-all duration-500 cursor-pointer"/>
+                    <img src={eachPro.coverImgURL} loading="lazy"  className="w-full h-48 md:h-52 object-cover bg-cover scall-100 group-hover:scale-105 overflow-hidden transition-all duration-500 cursor-pointer"/>
                     {/* layer >>> */}
                     <div className="absolute h-full w-full flex flex-row justify-between items-center p-4 opacity-0
                     bg-gradient-to-t from-black/75 dark:from-white/75 to-transparent group-hover:opacity-100 group-hover:overflow-hidden top-[70px] md:top-[75px]
