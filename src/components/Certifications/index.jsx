@@ -132,7 +132,7 @@ const Certifications = () => {
 
             <h1 className="text-gray-900 dark:text-gray-100 font-roboto font-bold text-xl">{eachItem.course}</h1>
             <p className="text-blue-600 dark:text-blue-400 font-roboto mt-1 text-sm md:text-base">{eachItem.issuer} - {eachItem.date}</p>
-            <a href={eachItem.certificateURL} target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-blue-300 mt-2 text-[10px] md:text-xs underline">Detailed View Certificate</a>
+            <a href={eachItem.certificateURL} target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-blue-300 mt-2 text-[10px] md:text-xs hover:text-blue-700 dark:hover:text-blue-200  underline">Detailed View Certificate</a>
           </li>
         ))}
       </ul>

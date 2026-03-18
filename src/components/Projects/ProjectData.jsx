@@ -9,11 +9,11 @@ const PROJECTSLIST = [
         title:"Resume Builder App",
         description:"Resume Builder App is a modern, user-friendly web application that enables users to create professional resumes quickly and easily. With a simple form-based interface and instant Preview includes with responsive design, users can enter their details and instantly generate polished, ready-to-download resumes in minutes.",
         techStack:["HTML", "CSS", "JavaScript", "React", "TailwindCSS", "Node", "Authentication","LocalStorage", "Puppeteer", "Mongodb"],
-        gitRepoLink:"https://github.com/RajuBadanakanti-cloud/NXTTrendz-eCommerce-website.git",
+        gitRepoLink:"https://github.com/RajuBadanakanti-cloud/resume-builder.git",
         liveLink:"https://resume-builder-rb-cloud.vercel.app/",
         coverImgURL:"/assets/Resume-Builder-Cover.png",
     },
-            { 
+    { 
     
         id:uuidv4(),
         category:"Full-Stack Development",
@@ -24,6 +24,19 @@ const PROJECTSLIST = [
         liveLink:"https://spend-smart-rb-cloud.vercel.app/",
         coverImgURL:"/assets/Spend-Smart-Cover.png", 
     },
+
+
+    {
+         id:uuidv4(),
+        category:"Full-Stack Development",
+        title:"Ai Assistant Eco-sustainability App",
+        description:"This Ai-Assistance app helps categorize sustainable products and estimate their environmental impact. Try entering eco-friendly products such as bamboo toothbrush, reusable bottle, or cotton shopping bag and more.",
+        techStack:["HTML", "CSS", "JavaScript", "React", "APIcalls","API KEY", "Ai Integration",],
+        gitRepoLink:"https://github.com/RajuBadanakanti-cloud/eco-sustainable-ai.git",
+        liveLink:"https://eco-sustainable-ai.vercel.app/",
+        coverImgURL:"/assets/Eco-Impact-Ai-Cover.png",
+    },
+ 
     { 
     
         id:uuidv4(),

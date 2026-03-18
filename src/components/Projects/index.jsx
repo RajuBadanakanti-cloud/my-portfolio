@@ -77,16 +77,16 @@ const Projects = () => {
                     bg-gradient-to-t from-black/75 dark:from-white/75 to-transparent group-hover:opacity-100 group-hover:overflow-hidden top-[70px] md:top-[75px]
                     transition-all duration-500  cursor-pointer" >
                         {/* navigations */}
-                        <span className="bg-slate-100 dark:bg-slate-900 text-xs md:text-sm font-roboto text-gray-900 dark:text-gray-100 rounded-full px-3 md:px-3 py-[6px] md:py-1 opacity-80  cursor-text" onClick={(e) => e.stopPropagation()}>{eachPro.category}</span>
+                        <span className="bg-slate-100 dark:bg-slate-900 text-xs md:text-sm font-roboto text-gray-900 dark:text-gray-100 rounded-full shadow-md px-3 md:px-3 py-[6px] md:py-1 opacity-80  cursor-text" onClick={(e) => e.stopPropagation()}>{eachPro.category}</span>
                         <div className="flex flex-row justify-center items-center space-x-4">
                         {/* Git */}
                             <a href={eachPro.gitRepoLink} rel="noopener noreferrer" target="_blank" onClick={(e) => e.stopPropagation()}
-                             className="bg-gray-900 dark:bg-gray-100 text-gray-50 dark:text-gray-950 text-sm md:text-base p-2 rounded-full hover:bg-gray-600 dark:hover:bg-gray-400 transition-color duration-300" >
+                             className="bg-gray-900 dark:bg-gray-50 text-gray-50 dark:text-gray-950 text-sm md:text-base p-2 rounded-full shadow-md hover:bg-gray-600 dark:hover:bg-gray-300 transition-color duration-300" >
                             <FaGithub/>
                             </a>
                         {/* Live Link */}
                             <a  href={eachPro.liveLink} rel="noopener noreferrer"  target="_blank" 
-                            className="bg-gray-900 dark:bg-gray-100 text-gray-50 dark:text-gray-950 text-sm md:text-base p-2 rounded-full hover:bg-gray-600 dark:hover:bg-gray-400 transition-color duration-300">
+                            className="bg-gray-900 dark:bg-gray-50 text-gray-50 dark:text-gray-950 text-sm md:text-base p-2 rounded-full shadow-md hover:bg-gray-600 dark:hover:bg-gray-300 transition-color duration-300">
                             <FaExternalLinkAlt/></a>
                         </div>
                     </div>
