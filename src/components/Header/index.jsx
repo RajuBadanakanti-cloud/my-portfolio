@@ -141,8 +141,8 @@ useEffect(() => {
     {/* Certification Link */}
       <Link to="/certifications"  rel="noopener noreferrer" className="text-lg font-roboto mr-10">
         <button type="button" onClick={() => setIsInCertificationPage(true)} 
-        className={`${isInCertificationPage ? "bg-blue-500 text-gray-200 dark:text-gray-300 px-2 py-1 hover:text-blue-200 dark:hover:text-blue-200" : "bg-transparent border-none outline-none text-gray-100 dark:text-gray-400 hover:text-blue-300"} 
-        text-gray-500  dark:hover:text-blue-300 rounded-md transition-colors duration-200`}>
+        className={`${isInCertificationPage ? "bg-blue-500 text-gray-200 dark:text-gray-300 px-2 py-1 hover:text-blue-200 dark:hover:text-blue-200" : "bg-transparent border-none outline-none text-gray-500 dark:text-gray-400  dark:hover:text-blue-300"} 
+         rounded-md transition-colors duration-200`}>
           Certifications</button>
       </Link>
     
