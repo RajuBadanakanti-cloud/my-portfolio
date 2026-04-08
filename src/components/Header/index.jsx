@@ -31,7 +31,8 @@ const Header = () => {
 const [activeTab , setActiveTab] = useState(navigationTabList[0].tabId)
 
 const [scrolled, setScrolled] = useState(false); // scrolling tuggele
-const [isInCertificationPage, setIsInCertificationPage] = useState(false); // certification page tuggele
+const location = useLocation()
+const isInCertificationPage = location.pathname === "/certifications"; // certification page tuggele
 
 
 useEffect(() => {
@@ -108,7 +109,7 @@ useEffect(() => {
   };
 
 // active tab removes when I'm stay at certifications page
-const location = useLocation();
+// const location = useLocation();
 useEffect(() => {
   if (location.pathname !== "/") {
     setActiveTab(null); // remove active highlight
@@ -130,7 +131,7 @@ useEffect(() => {
           <li key={eachTab.tabId} className="mr-6">
             <a href={eachTab.tabLink} onClick={() => {
               setActiveTab(eachTab.tabId)
-              setIsInCertificationPage(false)
+              isInCertificationPage
               }
             } className={`text-lg font-roboto ${isActive} transition-colors duration-200`}>
               {eachTab.tabLabel}</a>
@@ -140,7 +141,7 @@ useEffect(() => {
       </ul>
     {/* Certification Link */}
       <Link to="/certifications"  rel="noopener noreferrer" className="text-lg font-roboto mr-10">
-        <button type="button" onClick={() => setIsInCertificationPage(true)} 
+        <button type="button" onClick={() => isInCertificationPage} 
         className={`${isInCertificationPage ? "bg-blue-500 text-gray-200 dark:text-gray-300 px-2 py-1 hover:text-blue-200 dark:hover:text-blue-200" : "bg-transparent border-none outline-none text-gray-500 dark:text-gray-400  dark:hover:text-blue-300"} 
          rounded-md transition-colors duration-200`}>
           Certifications</button>

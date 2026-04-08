@@ -8,6 +8,7 @@ import Certifications from './components/Certifications'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import NotFound from "./components/NotFound" // Not Found Page
 import './App.css'
 
 const App = () => (
@@ -18,7 +19,7 @@ const App = () => (
     <div className='block md:hidden'>
       <MobileHeader/>
     </div>
-
+  <main className="min-h-screen">
     <Routes>
       {/* Main Page */}
       <Route path="/" element={
@@ -30,11 +31,13 @@ const App = () => (
         </>
       }/>
 
-      {/* New Page */}
+      {/* certification Page */}
       <Route path="/certifications" element={<Certifications/>}/>
+      <Route path="*" element={<NotFound/>}/>
     </Routes>
+    </main>
 
-    <Footer/>
+    <Footer/>22222221
     <ScrollToTop />
   </>
 )
