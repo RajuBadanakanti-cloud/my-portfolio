@@ -36,6 +36,18 @@ const PROJECTSLIST = [
         liveLink:"https://eco-sustainable-ai.vercel.app/",
         coverImgURL:"/assets/Eco-Impact-Ai-Cover.png",
     },
+
+    
+        {
+         id:uuidv4(),
+        category:"Full-Stack Development",
+        title:"Task Manager App",
+        description: "This Task Manager app helps users organize daily tasks efficiently with a clean and responsive interface. You can add new tasks, update existing ones, mark tasks as completed, search through tasks, and delete tasks when they are no longer needed. It is designed to simplify productivity and help manage day-to-day activities effectively.",   
+        techStack:["HTML", "CSS", "JavaScript", "React", "APIcalls", "Node",],
+        gitRepoLink:"https://github.com/RajuBadanakanti-cloud/task-manager.git",
+        liveLink:"https://task-manager-rb-cloud.vercel.app/",
+        coverImgURL:"/assets/Task-Manager-Daily-Cover.png",
+    },
  
     { 
     
@@ -48,7 +60,7 @@ const PROJECTSLIST = [
         liveLink:"https://rbcloud-nxttrendz-ecommerce.netlify.app/",
         coverImgURL:"/assets/NXTTrendz Ecomarce-Cover.png",
     },
-        {
+    {
          id:uuidv4(),
         category:"Web Design",
         title:"Personal Portfolio",
@@ -61,7 +73,7 @@ const PROJECTSLIST = [
     {
         id:uuidv4(),
         category:"Frontend Development",
-        title:"To-Do App",
+        title:"To-Do Application",
         description: "myTodos is a responsive to-do list web app designed to simplify task management. With a clean design, intuitive interface, and smooth interactions, it helps users stay organized and productive, making daily task tracking effortless and efficient.",
         techStack:["HTML", "CSS", "JavaScript", "React", "LocalStorage"],
         gitRepoLink:"https://github.com/RajuBadanakanti-cloud/my-todos-app.git",
@@ -90,8 +102,8 @@ const PROJECTSLIST = [
     },
 
     {
-         id:uuidv4(),
-        category:"Design",
+        id:uuidv4(),
+        category:"Web Design",
         title:"NXTTreadz eCommerce Clone",
         description:"NXT Trendz App is a modern, responsive web application showcasing trending content with intuitive design. Users can explore categories, view dynamic listings, and enjoy smooth navigation. Built to offer both style and usability in one seamless experience.",
         techStack:["HTML", "CSS", "JavaScript", "React", "APIcalls","Authentication", "JWTToken"],
