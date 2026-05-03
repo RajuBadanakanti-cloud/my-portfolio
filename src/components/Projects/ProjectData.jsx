@@ -2,6 +2,18 @@ import {v4 as uuidv4} from "uuid"
 
 
 const PROJECTSLIST = [
+        { 
+    
+        id:uuidv4(),
+        category:"Full-Stack Development",
+        title:"Curalink Medical Ai Research",
+        description:"CuraLink AI is a modern, user-friendly web application that enables users to explore medical research and treatment insights effortlessly. With an intuitive query-based interface and real-time AI analysis, users can search diseases, discover top research papers, clinical trials, and evidence-based medical insights in seconds, all presented in a clean, responsive design.",
+        techStack:["HTML", "CSS", "JavaScript", "React", "TailwindCSS", "Node", "Mongodb", "API Key", "LocalStorage", "Ai Integration"],
+        gitRepoLink:"https://github.com/RajuBadanakanti-cloud/curalink-medical-ai.git",
+        liveLink:"https://curalink-medical-ai-rb-cloud.vercel.app",
+        coverImgURL:"/assets/Curalink-Ai-Cover.png",
+    },
+
     
     { 
     
