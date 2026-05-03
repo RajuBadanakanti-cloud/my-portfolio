@@ -2,7 +2,8 @@ import {v4 as uuidv4} from "uuid"
 
 
 const PROJECTSLIST = [
-        { 
+    
+    { 
     
         id:uuidv4(),
         category:"Full-Stack Development",
@@ -13,6 +14,7 @@ const PROJECTSLIST = [
         liveLink:"https://resume-builder-rb-cloud.vercel.app/",
         coverImgURL:"/assets/Resume-Builder-Cover.png",
     },
+
     { 
     
         id:uuidv4(),
@@ -25,7 +27,6 @@ const PROJECTSLIST = [
         coverImgURL:"/assets/Spend-Smart-Cover.png", 
     },
 
-
     {
          id:uuidv4(),
         category:"Full-Stack Development",
@@ -36,9 +37,8 @@ const PROJECTSLIST = [
         liveLink:"https://eco-sustainable-ai.vercel.app/",
         coverImgURL:"/assets/Eco-Impact-Ai-Cover.png",
     },
-
-    
-        {
+ 
+    {
          id:uuidv4(),
         category:"Full-Stack Development",
         title:"Task Manager App",
@@ -60,6 +60,7 @@ const PROJECTSLIST = [
         liveLink:"https://rbcloud-nxttrendz-ecommerce.netlify.app/",
         coverImgURL:"/assets/NXTTrendz Ecomarce-Cover.png",
     },
+
     {
          id:uuidv4(),
         category:"Web Design",
@@ -70,6 +71,7 @@ const PROJECTSLIST = [
         liveLink:"https://rb-portfolio-ccbp.netlify.app",
         coverImgURL:"/assets/Personal Portfolio-Cover.png",
     },
+
     {
         id:uuidv4(),
         category:"Frontend Development",
@@ -80,6 +82,7 @@ const PROJECTSLIST = [
         liveLink:"https://rbcloud-mytodos-app.netlify.app/",
         coverImgURL:"/assets/Todo App-Cover.png",
     },
+
     {
         id:uuidv4(),
         category:"Frontend Development",
@@ -90,6 +93,7 @@ const PROJECTSLIST = [
         liveLink:"https://rbcloud-interactive-quiz.netlify.app/",
         coverImgURL:"/assets/Interactive Quiz-Cover.png",
     },
+
     {
          id:uuidv4(),
         category:"Frontend Development",
@@ -111,7 +115,6 @@ const PROJECTSLIST = [
         liveLink:"https://rjnxttrendzapp.ccbp.tech/",
         coverImgURL:"https://res.cloudinary.com/dnh9hnjbx/image/upload/v1755676261/todo-bg-image_pseqy9.png",
     }
-
 
 
 ]
