@@ -37,7 +37,7 @@ const App = () => (
     </Routes>
     </main>
 
-    <Footer/>22222221
+    <Footer/>
     <ScrollToTop />
   </>
 )

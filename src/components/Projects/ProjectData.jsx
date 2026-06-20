@@ -2,8 +2,8 @@ import {v4 as uuidv4} from "uuid"
 
 
 const PROJECTSLIST = [
-        { 
-    
+    { 
+
         id:uuidv4(),
         category:"Full-Stack Development",
         title:"Curalink Medical Ai Research",
@@ -14,7 +14,6 @@ const PROJECTSLIST = [
         coverImgURL:"/assets/Curalink-Ai-Cover.png",
     },
 
-    
     { 
     
         id:uuidv4(),
