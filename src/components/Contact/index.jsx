@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 import {FaEnvelope,FaMapMarkerAlt, FaPhone} from 'react-icons/fa'
 import {FaLinkedin, FaGithub, FaRegEnvelope, FaPaperPlane} from 'react-icons/fa'
@@ -14,6 +14,28 @@ const [isLoadigShown, setIsLoadigShown]= useState(false)
  const [email, setEmail] = useState("") // email from recruiters
  const [subject, setSubject] = useState("") // subject from recruiters
  const [message, setMessage] = useState("") // message from recruiters
+
+ const contactRef = useRef(null) // useref for animation >(ai)>
+ const [showAnimation, setShowAnimation] = useState(false) // smooth animation down to up
+ // animation>>
+useEffect(() => {
+  const handleScroll = () => {
+    const top = contactRef.current.getBoundingClientRect().top;
+
+    if (top < window.innerHeight - 100) {
+      setShowAnimation(true);
+    } else {
+      setShowAnimation(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
+
 
  // Name Input
  const onNameInput = (event) =>{
@@ -142,11 +164,15 @@ const [isLoadigShown, setIsLoadigShown]= useState(false)
                     transition-colors duration-300 cursor-pointer' >
                         <FaLinkedin className='text-base text-gray-900 dark:text-gray-100 md:text-xl'/></a>
               </div>
-      
-
             </section>
-            {/* Form Card >>  */}
-            <section className='w-full lg:w-4/6 bg-stone-50 dark:bg-slate-900 flex flex-col justify-start items-end rounded-lg shadow-md ml-0 md:ml-3 lg:ml-5 p-3 md:p-5 mt-10 md:mt-0'>
+
+
+            {/* <<<<<<<<< Form Card >>>>>>>>>>>>  */}
+            <section ref={contactRef} className={`w-full lg:w-4/6 bg-stone-50 dark:bg-slate-900 flex flex-col justify-start items-end rounded-lg shadow-md ml-0 md:ml-3 lg:ml-5 p-3 md:p-5 mt-10 md:mt-0
+            transform transition-all duration-700 ease-in-out
+              ${showAnimation ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+              style={{ transitionDelay: "300ms" }}
+            >
             <form id="contact-form" ref={form} className='w-full flex flex-col justify-start items-start p-2 lg:p-4' onSubmit={handleFormData}>
                 {/* Name & Email inputs container */}
                 <div className='w-full flex flex-col lg:flex-row mb-5'>

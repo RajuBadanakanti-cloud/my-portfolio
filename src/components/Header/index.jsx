@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
@@ -35,18 +36,41 @@ const location = useLocation()
 const isInCertificationPage = location.pathname === "/certifications"; // certification page tuggele
 
 
+// Active tab and IntersectionObserver
 useEffect(() => {
+
+  // active tab removes when I'm stay at certifications page
+  if (location.pathname !== "/") {
+    setActiveTab(null); // remove active highlight
+    return;
+  }
+
+  // Set active tab based on URL hash
+  const currentHash = location.hash;
+
+  const activeSection = navigationTabList.find(
+    (tab) => tab.tabLink.endsWith(currentHash)
+  );
+
+  if (activeSection) {
+    setActiveTab(activeSection.tabId);
+  } else {
+    setActiveTab(1); // Default to Home
+  }
+
+  // Observe sections on Home page
   const sections = document.querySelectorAll("#home, #about, #projects, #contact");
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const activeSection = navigationTabList.find(
+          const matchedTab = navigationTabList.find(
             (tab) => tab.tabLink.endsWith(`#${entry.target.id}`)
           );
-          if (activeSection) {
-            setActiveTab(activeSection.tabId);
+
+          if (matchedTab) {
+            setActiveTab(matchedTab.tabId);
           }
         }
       });
@@ -57,7 +81,8 @@ useEffect(() => {
   sections.forEach((sec) => observer.observe(sec));
 
   return () => observer.disconnect();
-}, []);
+
+}, [location.pathname, location.hash]);
 
 
 
@@ -80,12 +105,12 @@ useEffect(() => {
    const [darkMode, setDarkMode] = useState(false);
 
   // add a class="dark" for html tag in index.html
-  // Load theme from localStorage or system preference 
+  // Load theme from localStorage or system preference
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
-    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches; 
-    
+    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
     if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
       document.documentElement.classList.add("dark");
       setDarkMode(true);
@@ -108,13 +133,46 @@ useEffect(() => {
     }
   };
 
-// active tab removes when I'm stay at certifications page
-// const location = useLocation();
+  // Remove active tab when I'm on certifications page
 useEffect(() => {
+  // Remove active tab when I'm on certifications page
   if (location.pathname !== "/") {
-    setActiveTab(null); // remove active highlight
+    setActiveTab(null);
+    return;
   }
-}, [location.pathname]);
+
+  const sectionIds = ["home", "about", "projects", "contact"];
+
+  const updateActiveTab = () => {
+    const scrollPosition = window.scrollY + 150;
+
+    let currentTab = 1;
+
+    sectionIds.forEach((id, index) => {
+      const section = document.getElementById(id);
+
+      if (section && section.offsetTop <= scrollPosition) {
+        currentTab = index + 1;
+      }
+    });
+
+    setActiveTab(currentTab);
+  };
+
+  // Update active tab when page loads or hash changes
+  updateActiveTab();
+
+  // Update active tab while scrolling
+  window.addEventListener("scroll", updateActiveTab);
+  window.addEventListener("hashchange", updateActiveTab);
+
+  return () => {
+    window.removeEventListener("scroll", updateActiveTab);
+    window.removeEventListener("hashchange", updateActiveTab);
+  };
+
+}, [location.pathname, location.hash]);
+
     return (
     <div  className={`h-20 w-full fixed top-0 left-0 z-50 transition-all duration-300 flex flex-col justify-center items-center
        ${
@@ -123,32 +181,40 @@ useEffect(() => {
       <section className="w-4/5 flex flex-row justify-between items-center">
         <a className="text-2xl font-montserrat font-bold text-blue-600 dark:text-blue-400 border-none outline-none mr-10"
          href="/#home" rel="noopener noreferrer">Portfolio</a>
+
       {/* Navigation Tabs */}
       <ul className="flex flex-row justify-center items-center">
         {navigationTabList.map(eachTab => {
-        const isActive = activeTab ===  eachTab.tabId ? "text-blue-800 font-bold dark:text-blue-600 hover:text-blue-700  dark:hover:text-blue-500 " : "text-gray-500 dark:text-gray-400 font-normal hover:text-blue-300  dark:hover:text-blue-300"
+        const isActive = activeTab === eachTab.tabId ? "text-blue-800 font-bold dark:text-blue-600 hover:text-blue-700 dark:hover:text-blue-500 " : "text-gray-500 dark:text-gray-400 font-normal hover:text-blue-300 dark:hover:text-blue-300"
+
          return (
           <li key={eachTab.tabId} className="mr-6">
-            <a href={eachTab.tabLink} onClick={() => {
-              setActiveTab(eachTab.tabId)
-              isInCertificationPage
-              }
-            } className={`text-lg font-roboto ${isActive} transition-colors duration-200`}>
-              {eachTab.tabLabel}</a>
+            <a
+              href={eachTab.tabLink}
+              onClick={() => setActiveTab(eachTab.tabId)}
+              className={`text-lg font-roboto ${isActive} transition-colors duration-200`}
+            >
+              {eachTab.tabLabel}
+            </a>
           </li>
          )
 })}
       </ul>
+
     {/* Certification Link */}
-      <Link to="/certifications"  rel="noopener noreferrer" className="text-lg font-roboto mr-10">
-        <button type="button" onClick={() => isInCertificationPage} 
-        className={`${isInCertificationPage ? "bg-blue-500 text-gray-200 dark:text-gray-300 px-2 py-1 hover:text-blue-200 dark:hover:text-blue-200" : "bg-transparent border-none outline-none text-gray-500 dark:text-gray-400  dark:hover:text-blue-300"} 
-         rounded-md transition-colors duration-200`}>
-          Certifications</button>
+      <Link
+        to="/certifications"
+        className={`text-lg font-roboto mr-10 ${
+          isInCertificationPage
+            ? "bg-blue-500 text-gray-200 dark:text-gray-300 px-2 py-1 hover:text-blue-200 dark:hover:text-blue-200"
+            : "bg-transparent border-none outline-none text-gray-500 dark:text-gray-400 dark:hover:text-blue-300"
+        } rounded-md transition-colors duration-200`}
+      >
+        Certifications
       </Link>
-    
-    <button className=" dark:bg-slate-800 bg-slate-100 text-gray-800 dark:text-slate-200 p-2 rounded-full hover:bg-slate-300 dark:hover:bg-slate-600" onClick={toggleTheme}>
-      {darkMode? <Sun className="w-4 h-4 md:w-5 md:h-5"/>:<Moon className="w-4 h-4 md:w-5 md:h-5"/>} 
+
+    <button className="dark:bg-slate-800 bg-slate-100 text-gray-800 dark:text-slate-200 p-2 rounded-full hover:bg-slate-300 dark:hover:bg-slate-600" onClick={toggleTheme}>
+      {darkMode? <Sun className="w-4 h-4 md:w-5 md:h-5"/>:<Moon className="w-4 h-4 md:w-5 md:h-5"/>}
     </button>
       </section>
     </div>

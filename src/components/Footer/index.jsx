@@ -14,12 +14,12 @@ const Footer = () => (
             {/* Quick Links  */}
             <section className="w-full md:w-1/3 flex flex-col justify-start items-start mb-8 lg:mb-0 md:mr-10">
                 <h1 className="text-gray-50 font-roboto font-bold text-xl mb-3">Quick Links</h1>
-                <a href="#home" rel="noopener norelerror" className="text-gray-400 text-left font-roboto text-sm md:text-base hover:text-blue-500 mb-3 md:mb-2">Home</a>
-                <a href="#about" rel="noopener norelerror" className="text-gray-400 text-left  font-roboto text-sm md:text-base hover:text-blue-500 mb-3 md:mb-2">About</a>
-                <a href="#projects" rel="noopener norelerror" className="text-gray-400 text-left font-roboto text-sm md:text-base hover:text-blue-500 mb-3 md:mb-2">Projects</a>
-                <a href="#contact" rel="noopener norelerror" className="text-gray-400 text-left font-roboto text-sm md:text-base hover:text-blue-500 mb-3 md:mb-2">Contact</a>
+                <a href="/#home" rel="noopener norelerror" className="text-gray-400 text-left font-roboto text-sm md:text-base hover:text-blue-500 mb-3 md:mb-2">Home</a>
+                <a href="/#about" rel="noopener norelerror" className="text-gray-400 text-left  font-roboto text-sm md:text-base hover:text-blue-500 mb-3 md:mb-2">About</a>
+                <a href="/#projects" rel="noopener norelerror" className="text-gray-400 text-left font-roboto text-sm md:text-base hover:text-blue-500 mb-3 md:mb-2">Projects</a>
+                <a href="/#contact" rel="noopener norelerror" className="text-gray-400 text-left font-roboto text-sm md:text-base hover:text-blue-500 mb-3 md:mb-2">Contact</a>
                 <Link to="/certifications">
-                <p  className="text-gray-400 text-left font-roboto text-sm md:text-base hover:text-blue-500 mb-3 md:mb-2">Certifications</p>
+                <p className="text-gray-400 text-left font-roboto text-sm md:text-base hover:text-blue-500 mb-3 md:mb-2">Certifications</p>
                 </Link>
             </section>
 
