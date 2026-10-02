@@ -26,6 +26,20 @@ const PROJECTSLIST = [
         coverImgURL:"/assets/Resume-Builder-Cover.png",
     },
 
+    
+{
+    id: uuidv4(),
+    category: "Full-Stack Development",
+    title: "Secure User Authentication System",
+    description: "A full-stack authentication application that provides secure user registration and login with JWT-based authentication. It features bcrypt password hashing, access and refresh token management, protected routes, and secure session handling using HttpOnly cookies. Built with a responsive React interface and a Node.js, Express, and MongoDB backend.",
+    techStack: [
+        "HTML", "CSS", "JavaScript", "React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "JWT", "bcrypt",
+         "HttpOnly Cookies"],
+    gitRepoLink: "https://github.com/RajuBadanakanti-cloud/Authentication-System.git",
+    liveLink: "https://authentication-system-rb-cloud.vercel.app/",
+    coverImgURL: "/assets/Authentication-System-Cover.png",
+},
+
     { 
     
         id:uuidv4(),
